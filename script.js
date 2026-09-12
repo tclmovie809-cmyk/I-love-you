@@ -1,63 +1,95 @@
-function hideAll() {
+// ===============================
+// LOVE WEBSITE - SCRIPT.JS
+// ===============================
+
+function hideAllScreens() {
   document.querySelectorAll(".screen").forEach(screen => {
     screen.classList.add("hidden");
   });
 }
 
-function showScreen(id) {
-  hideAll();
-  document.getElementById(id).classList.remove("hidden");
-}
-
-
-// EMAIL
+// OPENING
 function openEmail() {
-  const hello = document.getElementById("helloText");
-  const tap = document.getElementById("tapText");
+  const helloText = document.getElementById("helloText");
+  const tapText = document.getElementById("tapText");
 
-  tap.classList.add("hidden");
-  hello.classList.remove("hidden");
+  if (helloText) {
+    helloText.classList.remove("hidden");
+    helloText.textContent = "Hello Bblabs 💌";
+  }
+
+  if (tapText) {
+    tapText.textContent = "Tap again 💕";
+  }
 
   setTimeout(() => {
-    hello.style.cursor = "pointer";
-
-    hello.onclick = () => {
-      showScreen("question");
-    };
-  }, 800);
+    hideAllScreens();
+    document.getElementById("question").classList.remove("hidden");
+  }, 1200);
 }
 
-
-// NO
+// QUESTION - NO
 function answerNo() {
-  const message = document.getElementById("noMessage");
+  const noMessage = document.getElementById("noMessage");
 
-  message.textContent = "Hindi ka maaaring makapasok. 💔";
-
-  setTimeout(() => {
-    message.textContent =
-      "Pero baka gusto mong subukan ang YES... 😉❤️";
-  }, 1800);
+  if (noMessage) {
+    noMessage.textContent =
+      "Hala 😭 sure ka ba? Try mo ulit ❤️";
+  }
 }
 
-
-// YES
+// QUESTION - YES
 function answerYes() {
-  showScreen("nameScreen");
-
-  setTimeout(() => {
-    document.getElementById("specialName").focus();
-  }, 300);
+  hideAllScreens();
+  document.getElementById("nameScreen").classList.remove("hidden");
 }
-
 
 // NAME
 function showLetter() {
-  const name = document.getElementById("specialName").value.trim();
+  const nameInput = document.getElementById("specialName");
+  const name = nameInput ? nameInput.value.trim() : "";
 
   if (name === "") {
-    alert("Please enter the name of your special someone. ❤️");
+    alert("Please enter the name first ❤️");
     return;
   }
 
-  document.getElementById("
+  hideAllScreens();
+  document.getElementById("letter").classList.remove("hidden");
+}
+
+// LETTER → MEMORY
+function startMemory() {
+  hideAllScreens();
+
+  const memory = document.getElementById("memory");
+  memory.classList.remove("hidden");
+
+  let count = 10;
+  const countdown = document.getElementById("countdown");
+
+  countdown.textContent = count;
+
+  const timer = setInterval(() => {
+    count--;
+    countdown.textContent = count;
+
+    if (count <= 0) {
+      clearInterval(timer);
+
+      hideAllScreens();
+      document.getElementById("final").classList.remove("hidden");
+    }
+  }, 1000);
+}
+
+// START
+document.addEventListener("DOMContentLoaded", () => {
+  hideAllScreens();
+
+  const opening = document.getElementById("opening");
+
+  if (opening) {
+    opening.classList.remove("hidden");
+  }
+});
