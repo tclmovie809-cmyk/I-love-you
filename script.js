@@ -8,37 +8,33 @@ function hideAllScreens() {
   });
 }
 
-// OPENING
+// OPENING — tap email
 function openEmail() {
   const helloText = document.getElementById("helloText");
   const tapText = document.getElementById("tapText");
 
-  if (helloText) {
-    helloText.classList.remove("hidden");
-    helloText.textContent = "Hello Bblabs 💌";
-  }
+  helloText.classList.remove("hidden");
+  tapText.textContent = "Tap Hello Bblabs 💕";
 
-  if (tapText) {
-    tapText.textContent = "Tap again 💕";
-  }
+  // Email disappears
+  document.querySelector(".email-icon").style.display = "none";
 
-  setTimeout(() => {
+  // Make Hello Bblabs clickable
+  helloText.style.cursor = "pointer";
+  helloText.onclick = () => {
     hideAllScreens();
     document.getElementById("question").classList.remove("hidden");
-  }, 1200);
+  };
 }
 
-// QUESTION - NO
+// NO
 function answerNo() {
   const noMessage = document.getElementById("noMessage");
 
-  if (noMessage) {
-    noMessage.textContent =
-      "Hala 😭 sure ka ba? Try mo ulit ❤️";
-  }
+  noMessage.textContent = "Hindi ka Maaring Makapasok 😭💔";
 }
 
-// QUESTION - YES
+// YES
 function answerYes() {
   hideAllScreens();
   document.getElementById("nameScreen").classList.remove("hidden");
@@ -47,7 +43,7 @@ function answerYes() {
 // NAME
 function showLetter() {
   const nameInput = document.getElementById("specialName");
-  const name = nameInput ? nameInput.value.trim() : "";
+  const name = nameInput.value.trim();
 
   if (name === "") {
     alert("Please enter the name first ❤️");
@@ -58,7 +54,7 @@ function showLetter() {
   document.getElementById("letter").classList.remove("hidden");
 }
 
-// LETTER → MEMORY
+// LETTER → IMAGE 1
 function startMemory() {
   hideAllScreens();
 
@@ -70,6 +66,14 @@ function startMemory() {
 
   countdown.textContent = count;
 
+  // Play music if available
+  const music = document.getElementById("loveSong");
+
+  if (music) {
+    music.currentTime = 0;
+    music.play().catch(() => {});
+  }
+
   const timer = setInterval(() => {
     count--;
     countdown.textContent = count;
@@ -77,8 +81,21 @@ function startMemory() {
     if (count <= 0) {
       clearInterval(timer);
 
-      hideAllScreens();
-      document.getElementById("final").classList.remove("hidden");
+      // Stop music
+      if (music) {
+        music.pause();
+        music.currentTime = 0;
+      }
+
+      // Fade out image
+      memory.style.opacity = "0";
+
+      setTimeout(() => {
+        hideAllScreens();
+
+        const finalScreen = document.getElementById("final");
+        finalScreen.classList.remove("hidden");
+      }, 700);
     }
   }, 1000);
 }
