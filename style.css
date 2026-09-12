@@ -6,7 +6,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
-  background: linear-gradient(135deg, #12001f, #3b0964, #7b1fa2);
+  background: linear-gradient(135deg, #16001f, #4b0870, #8e24aa);
   color: white;
   overflow-x: hidden;
 }
@@ -14,11 +14,11 @@ body {
 .screen {
   min-height: 100vh;
   width: 100%;
+  padding: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 25px;
   text-align: center;
   animation: fadeIn 0.8s ease;
 }
@@ -27,12 +27,12 @@ body {
   display: none !important;
 }
 
-/* EMAIL */
+/* EMAIL OPENING */
 
 .email-icon {
-  font-size: 110px;
+  font-size: 105px;
   cursor: pointer;
-  animation: floating 2s infinite ease-in-out;
+  animation: float 2s infinite ease-in-out;
   filter: drop-shadow(0 0 25px #ff8cff);
   transition: 0.3s;
 }
@@ -41,34 +41,34 @@ body {
   transform: scale(1.15);
 }
 
-#tapText {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
 #helloText {
   font-size: 42px;
   margin-top: 20px;
+  color: #fff;
+  text-shadow: 0 0 20px #ff7bea;
   animation: pop 0.8s ease;
-  text-shadow: 0 0 20px #ff9cff;
 }
 
-/* CARDS */
+#tapText {
+  opacity: 0.8;
+}
+
+/* CARD */
 
 .card,
 .letter-card {
-  width: min(90%, 650px);
-  padding: 35px;
+  width: min(92%, 650px);
+  padding: 32px;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
   backdrop-filter: blur(15px);
-  box-shadow: 0 0 35px rgba(255, 0, 255, 0.25);
+  box-shadow: 0 0 35px rgba(255,0,255,0.3);
 }
 
 .card h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: 27px;
+  margin-bottom: 28px;
 }
 
 /* BUTTONS */
@@ -76,41 +76,40 @@ body {
 button {
   border: none;
   padding: 14px 30px;
-  margin: 10px;
+  margin: 8px;
   border-radius: 30px;
   background: linear-gradient(135deg, #ff4fd8, #9c27b0);
   color: white;
   font-size: 17px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(255, 0, 255, 0.3);
+  box-shadow: 0 5px 20px rgba(255,0,255,0.35);
   transition: 0.25s;
 }
 
 button:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 8px 25px rgba(255, 150, 255, 0.5);
+  transform: translateY(-3px) scale(1.05);
 }
+
+/* INPUT */
 
 input {
   width: min(100%, 450px);
   padding: 15px 20px;
-  border-radius: 30px;
   border: none;
   outline: none;
+  border-radius: 30px;
   font-size: 17px;
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 18px;
 }
 
-/* NO MESSAGE */
+/* NO */
 
 #noMessage {
-  color: #ffb6ff;
-  font-size: 18px;
+  color: #ffc5ff;
   font-weight: bold;
-  margin-top: 20px;
-  animation: shake 0.4s ease;
+  font-size: 18px;
 }
 
 /* LETTER */
@@ -124,15 +123,15 @@ input {
 
 .letter-card h1 {
   text-align: center;
-  color: #ffd1ff;
-  margin-bottom: 30px;
+  color: #ffd5ff;
+  margin-bottom: 25px;
 }
 
 .signature {
   text-align: right;
+  color: #ffbaff;
   font-style: italic;
   font-size: 20px;
-  color: #ffb8ff;
 }
 
 /* IMAGE 1 */
@@ -140,70 +139,70 @@ input {
 .memory-container {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .memory-image {
   max-width: 90vw;
   max-height: 75vh;
-  border-radius: 20px;
+  border-radius: 22px;
   object-fit: contain;
-  box-shadow: 0 0 40px rgba(255, 120, 255, 0.5);
-  animation: imageAppear 1s ease;
+  box-shadow: 0 0 40px rgba(255,120,255,0.5);
+  animation: imageIn 1s ease;
 }
 
 #countdown {
   position: absolute;
   font-size: 80px;
   font-weight: bold;
-  text-shadow: 0 0 30px black;
-  animation: countdownPulse 1s infinite;
+  text-shadow: 0 0 25px black;
+  animation: pulse 1s infinite;
 }
 
-/* FINAL */
+/* FINAL HEART */
+
+.heart-container {
+  position: relative;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  font-size: 110px;
+  animation: heartbeat 1.1s infinite;
+  filter: drop-shadow(0 0 25px #ff4fd8);
+}
+
+.sparkle {
+  position: absolute;
+  top: 5px;
+  left: -40px;
+  font-size: 25px;
+  animation: sparkle 1.5s infinite;
+}
+
+.sparkle2 {
+  left: auto;
+  right: -40px;
+  animation-delay: .5s;
+}
+
+.sparkle3 {
+  top: 105px;
+  left: 50%;
+  animation-delay: 1s;
+}
 
 .final-image {
   width: min(85vw, 500px);
   max-height: 55vh;
   object-fit: contain;
   border-radius: 25px;
-  box-shadow: 0 0 35px rgba(255, 100, 255, 0.45);
-  animation: imageAppear 1.2s ease;
-}
-
-.heart-container {
-  position: relative;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.heart {
-  font-size: 105px;
-  animation: heartbeat 1.1s infinite;
-  filter: drop-shadow(0 0 25px #ff5bd8);
-}
-
-.sparkle {
-  position: absolute;
-  font-size: 25px;
-  top: 5px;
-  left: -35px;
-  animation: sparkle 1.5s infinite;
-}
-
-.sparkle2 {
-  left: auto;
-  right: -35px;
-  animation-delay: 0.5s;
-}
-
-.sparkle3 {
-  top: 100px;
-  left: 50%;
-  animation-delay: 1s;
+  box-shadow: 0 0 40px rgba(255,100,255,0.5);
+  animation: imageIn 1.2s ease;
 }
 
 #finalMessage {
@@ -216,8 +215,13 @@ input {
 
 /* ANIMATIONS */
 
-@keyframes floating {
-  0%, 100% {
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%,100% {
     transform: translateY(0);
   }
 
@@ -226,19 +230,9 @@ input {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes pop {
   from {
-    transform: scale(0.5);
+    transform: scale(.5);
     opacity: 0;
   }
 
@@ -248,24 +242,10 @@ input {
   }
 }
 
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(-8px);
-  }
-
-  75% {
-    transform: translateX(8px);
-  }
-}
-
-@keyframes imageAppear {
+@keyframes imageIn {
   from {
     opacity: 0;
-    transform: scale(0.85);
+    transform: scale(.85);
   }
 
   to {
@@ -274,18 +254,18 @@ input {
   }
 }
 
-@keyframes countdownPulse {
-  0%, 100% {
+@keyframes pulse {
+  0%,100% {
     transform: scale(1);
   }
 
   50% {
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,100% {
     transform: scale(1);
   }
 
@@ -303,9 +283,9 @@ input {
 }
 
 @keyframes sparkle {
-  0%, 100% {
+  0%,100% {
     opacity: 0;
-    transform: scale(0.5) rotate(0deg);
+    transform: scale(.5) rotate(0deg);
   }
 
   50% {
@@ -314,15 +294,21 @@ input {
   }
 }
 
+/* PHONE */
+
 @media (max-width: 600px) {
 
   #helloText {
     font-size: 32px;
   }
 
+  .email-icon {
+    font-size: 85px;
+  }
+
   .card,
   .letter-card {
-    padding: 25px 18px;
+    padding: 24px 18px;
   }
 
   .card h2 {
@@ -333,7 +319,7 @@ input {
     font-size: 15px;
   }
 
-  .email-icon {
-    font-size: 85px;
+  .heart {
+    font-size: 90px;
   }
 }
