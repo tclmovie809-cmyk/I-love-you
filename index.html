@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Bblabs 💌</title>
 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- OPENING -->
+  <section id="opening" class="screen">
+    <div class="email-icon" onclick="openEmail()">
+      💌
+    </div>
+
+    <h1 id="helloText" class="hidden">Hello Bblabs</h1>
+    <p id="tapText">Tap the email 💌</p>
+  </section>
+
+
+  <!-- QUESTION 1 -->
+  <section id="question" class="screen hidden">
+    <div class="card">
+      <h2>Do you have a special someone? 💗</h2>
+
+      <div class="buttons">
+        <button onclick="answerNo()">No</button>
+        <button onclick="answerYes()">Yes ❤️</button>
+      </div>
+
+      <p id="noMessage"></p>
+    </div>
+  </section>
+
+
+  <!-- NAME -->
+  <section id="nameScreen" class="screen hidden">
+    <div class="card">
+      <h2>What is the name of your special someone? 💕</h2>
+
+      <input
+        type="text"
+        id="specialName"
+        placeholder="Enter the name..."
+      >
+
+      <button onclick="showLetter()">Proceed ➜</button>
+    </div>
+  </section>
+
+
+  <!-- LETTER -->
+  <section id="letter" class="screen hidden">
+    <div class="letter-card">
+
+      <h1>Message from John Reynard 💌</h1>
+
+      <p>
+        Hi, my love. ❤️
+      </p>
+
+      <p>
+        I just want you to know how thankful I am that you became
+        someone special in my life. Sometimes words are not enough
+        to explain how happy and grateful I feel whenever I think
+        about you.
+      </p>
+
+      <p>
+        Thank you for being someone who can make ordinary moments
+        feel special. Thank you for the smiles, the conversations,
+        the little memories, and even the simple moments that
+        somehow became important to me.
+      </p>
+
+      <p>
+        I may not always know the perfect words to say, but I hope
+        you can feel how sincere I am. I appreciate you more than
+        you probably realize. Having someone like you in my life
+        is something that I will always be thankful for.
+      </p>
+
+      <p>
+        No matter how busy life becomes, I hope we never forget
+        the beautiful moments we shared. I hope this little
+        surprise reminds you that somewhere in this world,
+        there is someone who truly cares about you.
+      </p>
+
+      <p>
+        Thank you for being you. Thank you for existing.
+        And most importantly, thank you for becoming my
+        special someone. ❤️
+      </p>
+
+      <p class="signature">
+        — John Reynard 💗
+      </p>
+
+      <button onclick="startMemory()">Next ➜</button>
+
+    </div>
+  </section>
+
+
+  <!-- IMAGE 1 / COUNTDOWN -->
+  <section id="memory" class="screen hidden">
+
+    <div class="memory-container">
+
+      <img
+        src="images/image1.jpg"
+        class="memory-image"
+        alt="Our memory"
+      >
+
+      <div id="countdown">10</div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL HEART -->
+  <section id="final" class="screen hidden">
+
+    <div class="heart-container">
+
+      <div class="heart">❤️</div>
+
+      <div class="sparkle">✨</div>
+      <div class="sparkle sparkle2">✨</div>
+      <div class="sparkle sparkle3">✨</div>
+
+    </div>
+
+    <img
+      src="images/image2.png"
+      class="final-image"
+      alt="Love"
+    >
+
+    <h2 id="finalMessage">
+      Hello labb Ako diay Si John Reynard ang Lab kaau ka
+      I love you always labb 😘💋
+    </h2>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
